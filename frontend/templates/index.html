@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwarmDesk — Multi-Agent AI Productivity</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────────────────── -->
+<nav class="nav">
+    <div class="nav-inner">
+        <div class="nav-brand">
+            <div class="brand-hex">⬡</div>
+            <span class="brand-name">SwarmDesk</span>
+            <span class="brand-tag">AGENT SWARM</span>
+        </div>
+        <div class="nav-links">
+            <a href="#how" class="nav-link">How it works</a>
+            <a href="#agents" class="nav-link">Agents</a>
+            <div class="nav-status">
+                <span class="status-dot" id="statusDot"></span>
+                <span id="statusText">Connecting...</span>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- ── HERO ────────────────────────────────────────────── -->
+<header class="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+    <div class="hero-content">
+        <div class="hero-eyebrow">
+            <span class="eyebrow-icon">⬡</span>
+            Theme 05 · Agent Swarms
+        </div>
+        <h1 class="hero-title">
+            One task.<br>
+            <span class="title-highlight">Four agents.</span><br>
+            One answer.
+        </h1>
+        <p class="hero-sub">
+            SwarmDesk orchestrates a team of specialized AI agents — Planner, Researcher, Writer, Validator — that collaborate, self-organize, and deliver polished results no single AI could produce alone.
+        </p>
+        <div class="hero-cta">
+            <a href="#workspace" class="cta-btn">Launch Workspace ↓</a>
+        </div>
+
+        <!-- Swarm visual -->
+        <div class="swarm-preview">
+            <div class="swarm-node node-center">
+                <span>🎯</span>
+                <small>Task</small>
+            </div>
+            <div class="swarm-connector"></div>
+            <div class="swarm-agents">
+                <div class="swarm-node node-planner">🗺️<small>Planner</small></div>
+                <div class="swarm-node node-researcher">🔍<small>Researcher</small></div>
+                <div class="swarm-node node-writer">✍️<small>Writer</small></div>
+                <div class="swarm-node node-validator">✅<small>Validator</small></div>
+            </div>
+            <div class="swarm-pulse"></div>
+        </div>
+    </div>
+</header>
+
+<!-- ── HOW IT WORKS ─────────────────────────────────────── -->
+<section id="how" class="section-how">
+    <div class="container">
+        <div class="section-label">HOW IT WORKS</div>
+        <h2 class="section-title">Sequential agent pipeline</h2>
+        <div class="pipeline">
+            <div class="pipe-step">
+                <div class="pipe-icon" style="background:rgba(99,102,241,0.15);border-color:#6366f1">🗺️</div>
+                <div class="pipe-label" style="color:#6366f1">01 — PLANNER</div>
+                <div class="pipe-desc">Breaks your task into a structured execution plan with clear steps and agent assignments.</div>
+            </div>
+            <div class="pipe-arrow">→</div>
+            <div class="pipe-step">
+                <div class="pipe-icon" style="background:rgba(6,182,212,0.15);border-color:#06b6d4">🔍</div>
+                <div class="pipe-label" style="color:#06b6d4">02 — RESEARCHER</div>
+                <div class="pipe-desc">Gathers domain knowledge, frameworks, and key facts aligned with the plan.</div>
+            </div>
+            <div class="pipe-arrow">→</div>
+            <div class="pipe-step">
+                <div class="pipe-icon" style="background:rgba(16,185,129,0.15);border-color:#10b981">✍️</div>
+                <div class="pipe-label" style="color:#10b981">03 — WRITER</div>
+                <div class="pipe-desc">Produces the polished deliverable using insights from the Planner and Researcher.</div>
+            </div>
+            <div class="pipe-arrow">→</div>
+            <div class="pipe-step">
+                <div class="pipe-icon" style="background:rgba(245,158,11,0.15);border-color:#f59e0b">✅</div>
+                <div class="pipe-label" style="color:#f59e0b">04 — VALIDATOR</div>
+                <div class="pipe-desc">Reviews, scores, and improves the output before delivering the final result.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── AGENTS ───────────────────────────────────────────── -->
+<section id="agents" class="section-agents">
+    <div class="container">
+        <div class="section-label">THE SWARM</div>
+        <h2 class="section-title">Meet your agents</h2>
+        <div class="agents-grid" id="agentsGrid">
+            <!-- Loaded by JS -->
+        </div>
+    </div>
+</section>
+
+<!-- ── EXAMPLES ─────────────────────────────────────────── -->
+<section class="section-examples">
+    <div class="container">
+        <div class="section-label">QUICK START</div>
+        <h2 class="section-title">Try an example</h2>
+        <div class="examples-grid" id="examplesGrid">
+            <!-- Loaded by JS -->
+        </div>
+    </div>
+</section>
+
+<!-- ── WORKSPACE ────────────────────────────────────────── -->
+<section id="workspace" class="section-workspace">
+    <div class="container">
+        <div class="section-label">WORKSPACE</div>
+        <h2 class="section-title">Dispatch your swarm</h2>
+
+        <div class="workspace-card">
+            <div class="task-input-area">
+                <label class="input-label">What do you need the swarm to do?</label>
+                <textarea
+                    id="taskInput"
+                    class="task-textarea"
+                    placeholder="e.g. Write a project proposal for an AI-powered inventory management system for mid-size retail businesses..."
+                    rows="4"
+                ></textarea>
+                <label class="input-label" style="margin-top:1rem;">Additional context (optional)</label>
+                <textarea
+                    id="contextInput"
+                    class="task-textarea"
+                    placeholder="Team size, industry, constraints, tone, audience..."
+                    rows="2"
+                ></textarea>
+                <div class="input-actions">
+                    <span class="char-count" id="charCount">0 / 1000</span>
+                    <button id="runBtn" class="run-btn" onclick="runSwarm()">
+                        <span class="run-btn-icon">⬡</span>
+                        Dispatch Swarm
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Live Swarm Output -->
+        <div id="swarmOutput" class="swarm-output hidden">
+
+            <div class="output-header">
+                <div class="output-title">
+                    <span class="pulse-ring"></span>
+                    <span id="outputStatus">Swarm running…</span>
+                </div>
+                <div class="output-meta">
+                    <span id="elapsedTime">0.0s</span>
+                    <button class="clear-btn" onclick="clearOutput()">✕ Clear</button>
+                </div>
+            </div>
+
+            <!-- Agent panels -->
+            <div class="agent-panels" id="agentPanels"></div>
+
+            <!-- Final result -->
+            <div id="finalResult" class="final-result hidden">
+                <div class="final-header">
+                    <span class="final-icon">⬡</span>
+                    <h3>Swarm Complete — Final Validated Output</h3>
+                    <div class="final-actions">
+                        <button onclick="copyFinal()" class="action-btn">📋 Copy</button>
+                        <button onclick="downloadFinal()" class="action-btn">⬇ Download</button>
+                    </div>
+                </div>
+                <div id="finalContent" class="final-content"></div>
+                <div id="swarmStats" class="swarm-stats"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── FOOTER ───────────────────────────────────────────── -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="brand-hex">⬡</span>
+                <span>SwarmDesk</span>
+            </div>
+            <div class="footer-info">
+                Built for Microsoft AI Hackathon 2026 · Theme 05: Agent Swarms
+            </div>
+            <div class="footer-stack">
+                <span class="stack-badge">FastAPI</span>
+                <span class="stack-badge">OpenAI GPT-4o</span>
+                <span class="stack-badge">Python</span>
+                <span class="stack-badge">SSE Streaming</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="/static/js/app.js"></script>
+</body>
+</html>
